@@ -37,7 +37,7 @@ def read_root() -> dict :
 @app.get("/get-one-cfip")
 def get_one_cfip() -> dict :
     cfips : list  = read_json_from_file(CFIPS_PATH)
-    if not cfip :
+    if not cfips :
         send_telegram_message('cfips.json is empty')
         return {} 
     cfip : str = cfips.pop() 
