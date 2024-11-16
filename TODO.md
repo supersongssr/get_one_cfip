@@ -1,3 +1,6 @@
 - [x] 安装 fastapi 
 - [x] 写一个api脚本
 - [x] 报错通知
+- [x] add a new api  : notify , telegram notify 
+    - 如何获取 post 参数?
+    - reload 

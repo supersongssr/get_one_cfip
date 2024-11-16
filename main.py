@@ -1,5 +1,5 @@
 # 
-from fastapi import FastAPI
+from fastapi import FastAPI, Form
 import json 
 import os 
 import requests 
@@ -43,3 +43,13 @@ def get_one_cfip() -> dict :
     cfip : str = cfips.pop() 
     save_json_to_file(cfips, CFIPS_PATH)
     return {'cfip':cfip} 
+
+# 通知 api 通知 telegram; 请求体是 json. 见 docs
+@app.post("/notify")
+def notify(token : str, message : str) -> dict :
+    # 获取 参数 token 和 message
+    if token != config.NOTIFY_TOKEN :
+        send_telegram_message('notify: token is not correct')
+        return {'err':'token-correct'}
+    send_telegram_message(message)
+    return {'notify':'done'}
