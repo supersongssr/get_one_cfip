@@ -2,8 +2,13 @@
 give me a cfip by fastapi
 
 
+!!! 该项目转到 apinodehub 项目中去了. 这里废弃
+
 fastapi, 每次获取一个cf cdn 大陆可访问ip. 
 徐自己搭建
+
+
+
 
 ## install 
 ```shell
